@@ -1,0 +1,11 @@
+sudo: required
+dist: trusty
+language: cpp
+
+install:
+  - sudo apt-get install -y qt5-default qttools5-dev-tools #install necessary Qt files
+
+script:
+  - qmake QtTetris.pro # we gonna compile for actual program
+  - make
+  - ./QtTetris test # run unit test
